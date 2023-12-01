@@ -219,7 +219,7 @@ class _HomeScreenState extends State<HomeScreen> with AfterLayoutMixin {
                               return HomeButton(
                                 quantity:
                                     state.data!.totalSales.length.toString(),
-                                icon: CupertinoIcons.square_list,
+                                icon: Icons.today_outlined,
                                 title: 'Total Sales',
                               );
 
@@ -253,8 +253,14 @@ class _HomeScreenState extends State<HomeScreen> with AfterLayoutMixin {
                             return const Loader();
 
                           case StatusType.loaded:
-                            return GridProductsWidget(
-                                products: state.data!.products);
+                            return state.data!.products.isEmpty
+                                ? const Center(
+                                    child: Text(
+                                    'Prouduct is Empty',
+                                    style: TextStyle(fontSize: 20),
+                                  ))
+                                : GridProductsWidget(
+                                    products: state.data!.products);
 
                           default:
                             return const Loader();
