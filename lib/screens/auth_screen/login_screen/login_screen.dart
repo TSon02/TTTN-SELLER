@@ -53,8 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 UIHelpers.showSnackBar(
                     context: context,
                     message: state.data!.error.replaceAll(RegExp(r',.*$'), ""));
-              } else if (state.data!.error.contains('Success') &&
-                  state.data!.response!.user!.type == 'admin') {
+              } else if (state.data!.error.contains('Success')) {
                 Navigator.pushNamedAndRemoveUntil(
                     context, RouteGenerator.menuScreen, (route) => false);
               } else {

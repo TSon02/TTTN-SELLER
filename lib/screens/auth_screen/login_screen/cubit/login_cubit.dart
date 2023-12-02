@@ -55,6 +55,9 @@ class LoginCubit extends Cubit<LoginState> {
           emit(LoginState.getError(
               data: state.data!.copyWith(error: 'Success ,$random')));
 
+          emit(LoginState.getError(
+              data: state.data!.copyWith(error: 'Success ,$random')));
+
           SharedPreferences prefs = await SharedPreferences.getInstance();
 
           // Provider.of<UserProvider>(context, listen: false).setUser(user: {

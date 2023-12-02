@@ -209,7 +209,18 @@ class _SingleProductWidgetState extends State<SingleProductWidget> {
                       ],
                     ),
                     const Spacer(),
-                    TitleTextWidget(title: '\$ ${widget.product.price}'),
+                    // TitleTextWidget(title: '\$ ${widget.product.price}'),
+                    SizedBox(
+                      width: 60,
+                      child: Text(
+                        '\$ ${widget.product.price}',
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),

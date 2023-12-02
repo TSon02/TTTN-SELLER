@@ -30,6 +30,15 @@ class _SelectCouponsState extends State<SelectCoupons> {
   }
 
   @override
+  void initState() {
+    if (widget.initialValue != null) {
+      context.read<CouponsProvider>().setCoupons(coupons: widget.initialValue!);
+    }
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final couponsProvider = context.watch<CouponsProvider>();
     // Provider.of<CouponsProvider>(context);

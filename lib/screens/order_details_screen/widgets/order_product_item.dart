@@ -29,7 +29,7 @@ class OrderProductWidgetState extends State<OrderProductWidget> {
         borderRadius: BorderRadius.circular(12),
         child: Container(
           width: double.infinity,
-          height: 110,
+          height: 100,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(12),
@@ -47,14 +47,14 @@ class OrderProductWidgetState extends State<OrderProductWidget> {
             ],
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               children: [
                 CachedNetworkImage(
                   imageUrl: product.image,
                   imageBuilder: (context, imageProvider) => Container(
-                    height: 90,
-                    width: 90,
+                    height: 85,
+                    width: 85,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       image: DecorationImage(
@@ -89,9 +89,13 @@ class OrderProductWidgetState extends State<OrderProductWidget> {
                     TitleTextWidget(
                       title: product.productBrand,
                     ),
-                    SubTitleWidget(
-                      subTitle: product.productName,
-                      fontWeight: FontWeight.w600,
+                    SizedBox(
+                      width: 160,
+                      child: SubTitleWidget(
+                        subTitle: product.productName,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 13,
+                      ),
                     ),
                     SubTitleWidget(
                       subTitle: 'Quantity: $quantity',

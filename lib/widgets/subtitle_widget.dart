@@ -20,7 +20,8 @@ class SubTitleWidget extends StatelessWidget {
       style: TextStyle(
           fontSize: fontSize,
           color: Colors.black.withOpacity(0.5),
-          fontWeight: fontWeight),
+          fontWeight: fontWeight,
+          overflow: TextOverflow.ellipsis),
     );
   }
 }
